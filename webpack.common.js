@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, "./src/app.ts"),
+  entry: path.resolve(__dirname, "./src/app.js"),
   output: {
     filename: "js/bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -19,12 +19,6 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_module/,
-        loader: "babel-loader",
-      },
-      {
-        test: /\.ts?$/,
-        exclude: /node_module/,
-        loader: "ts-loader",
       },
       {
         test: /\.s[ac]ss$/i,
@@ -58,7 +52,7 @@ module.exports = {
   },
   plugins: [
       new MiniCssExtractPlugin({
-          filename: 'styles/kunstyle.css',
+          filename: 'styles/style.css',
       }),
       new CleanWebpackPlugin()
   ]
